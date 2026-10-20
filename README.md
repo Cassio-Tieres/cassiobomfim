@@ -1,4 +1,4 @@
-# Pixel-Perfect Replica
+# Cássio Bomfim App
 
 Implement exactly the screenshot and nothing else
 
