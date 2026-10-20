@@ -1,0 +1,268 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system — "engineering notebook":
+ * near-white paper, deep navy ink, a single amber "signal" accent used
+ * sparingly for live states (flow pulses, highlights).
+ * All colors use oklch. Register new tokens in @theme inline.
+ */
+
+@theme inline {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Schibsted Grotesk", "IBM Plex Sans", ui-sans-serif, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-signal: var(--signal);
+  --color-signal-foreground: var(--signal-foreground);
+  --color-signal-soft: var(--signal-soft);
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-border: var(--ink-border);
+  --color-ink-surface: var(--ink-surface);
+  --color-success: var(--success);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --shadow-soft: var(--shadow-soft);
+  --shadow-lift: var(--shadow-lift);
+}
+
+:root {
+  --radius: 0.5rem;
+  --background: oklch(0.992 0.002 250);
+  --foreground: oklch(0.21 0.035 262);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.21 0.035 262);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.21 0.035 262);
+  --primary: oklch(0.33 0.095 262);
+  --primary-foreground: oklch(0.985 0.004 250);
+  --primary-soft: oklch(0.95 0.02 258);
+  --secondary: oklch(0.965 0.006 255);
+  --secondary-foreground: oklch(0.25 0.05 262);
+  --muted: oklch(0.968 0.005 255);
+  --muted-foreground: oklch(0.47 0.03 260);
+  --accent: oklch(0.955 0.014 258);
+  --accent-foreground: oklch(0.25 0.06 262);
+  --signal: oklch(0.77 0.14 70);
+  --signal-foreground: oklch(0.25 0.05 60);
+  --signal-soft: oklch(0.96 0.04 80);
+  --ink: oklch(0.235 0.06 262);
+  --ink-foreground: oklch(0.97 0.006 250);
+  --ink-muted: oklch(0.78 0.03 255);
+  --ink-border: oklch(1 0 0 / 12%);
+  --ink-surface: oklch(1 0 0 / 5%);
+  --success: oklch(0.52 0.12 155);
+  --destructive: oklch(0.55 0.2 27);
+  --destructive-foreground: oklch(0.985 0.004 250);
+  --border: oklch(0.915 0.008 255);
+  --border-strong: oklch(0.84 0.014 258);
+  --input: oklch(0.88 0.01 255);
+  --ring: oklch(0.45 0.12 262);
+  --chart-1: oklch(0.33 0.095 262);
+  --chart-2: oklch(0.77 0.14 70);
+  --chart-3: oklch(0.55 0.06 250);
+  --chart-4: oklch(0.7 0.04 255);
+  --chart-5: oklch(0.85 0.02 255);
+  --sidebar: oklch(0.985 0.003 250);
+  --sidebar-foreground: oklch(0.21 0.035 262);
+  --sidebar-primary: oklch(0.33 0.095 262);
+  --sidebar-primary-foreground: oklch(0.985 0.004 250);
+  --sidebar-accent: oklch(0.955 0.014 258);
+  --sidebar-accent-foreground: oklch(0.25 0.06 262);
+  --sidebar-border: oklch(0.915 0.008 255);
+  --sidebar-ring: oklch(0.45 0.12 262);
+
+  --shadow-soft: 0 1px 2px oklch(0.21 0.035 262 / 4%), 0 4px 16px -6px oklch(0.21 0.035 262 / 8%);
+  --shadow-lift: 0 2px 4px oklch(0.21 0.035 262 / 4%), 0 18px 40px -16px oklch(0.33 0.095 262 / 22%);
+  --header-h: 4rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  section[id] {
+    scroll-margin-top: calc(var(--header-h) + 0.5rem);
+  }
+
+  ::selection {
+    background: var(--primary-soft);
+    color: var(--primary);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+/* Blueprint grid backdrop */
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, var(--color-border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-border) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+@utility bg-grid-ink {
+  background-image:
+    linear-gradient(to right, var(--color-ink-border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-ink-border) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+@utility mask-fade {
+  mask-image: radial-gradient(ellipse 80% 70% at 60% 40%, black 30%, transparent 85%);
+}
+
+/* Small mono label used for eyebrows, tags and diagram nodes */
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Animated dashed connector — "data in transit" */
+@utility flow-line {
+  stroke-dasharray: 4 6;
+  animation: flow-dash 1.6s linear infinite;
+}
+
+@utility flow-line-x {
+  background-image: linear-gradient(to right, var(--color-border-strong) 50%, transparent 50%);
+  background-size: 10px 1px;
+  background-repeat: repeat-x;
+  animation: flow-slide-x 1.2s linear infinite;
+}
+
+@utility flow-line-y {
+  background-image: linear-gradient(to bottom, var(--color-border-strong) 50%, transparent 50%);
+  background-size: 1px 10px;
+  background-repeat: repeat-y;
+  animation: flow-slide-y 1.2s linear infinite;
+}
+
+@utility pulse-signal {
+  animation: pulse-signal 2.4s ease-in-out infinite;
+}
+
+@utility fade-up {
+  animation: fade-up 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes flow-dash {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+
+@keyframes flow-slide-x {
+  to {
+    background-position: 10px 0;
+  }
+}
+
+@keyframes flow-slide-y {
+  to {
+    background-position: 0 10px;
+  }
+}
+
+@keyframes pulse-signal {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
