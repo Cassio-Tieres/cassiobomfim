@@ -20,7 +20,7 @@ export const contact = {
   whatsappMessage:
     "Olá! Conheci seu portfólio e gostaria de conversar sobre um projeto de automação ou desenvolvimento de software.",
   email: "tieresbomfim@gmail.com" as string | null,
-  linkedin: null as string | null,
+  linkedin: "https://www.linkedin.com/in/cassio-tieres-bomfim/" as string | null,
   github: null as string | null,
 };
 

@@ -1,3 +1,5 @@
+import { Linkedin } from "lucide-react";
+
 import { contact, navItems, profile } from "@/content/site";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
@@ -7,7 +9,7 @@ export function Footer() {
   const year = new Date().getFullYear();
   const social = [
     { label: "WhatsApp", href: buildWhatsAppUrl() },
-    contact.linkedin && { label: "LinkedIn", href: contact.linkedin },
+    contact.linkedin && { label: "LinkedIn", href: contact.linkedin, icon: Linkedin },
     contact.github && { label: "GitHub", href: contact.github },
     contact.email && { label: "E-mail", href: `mailto:${contact.email}` },
   ].filter(Boolean) as { label: string; href: string }[];
@@ -40,8 +42,9 @@ export function Footer() {
                   href={s.href}
                   target={s.href.startsWith("http") ? "_blank" : undefined}
                   rel="noopener noreferrer"
-                  className="text-sm text-ink-foreground/85 hover:text-signal"
+                  className="inline-flex items-center gap-2 text-sm text-ink-foreground/85 hover:text-signal"
                 >
+                  {s.label === "LinkedIn" && <Linkedin className="size-4" aria-hidden />}
                   {s.label}
                 </a>
               </li>
