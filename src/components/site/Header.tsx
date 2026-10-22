@@ -1,9 +1,9 @@
-import { Menu } from "lucide-react";
+import { Github, Linkedin, Menu } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetClose, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { navItems } from "@/content/site";
+import { contact, navItems } from "@/content/site";
 import { cn } from "@/lib/utils";
 
 import { BrandMark } from "./BrandMark";
@@ -52,6 +52,16 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
+          {contact.linkedin && (
+            <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="rounded-md p-2 text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+              <Linkedin className="size-4" aria-hidden />
+            </a>
+          )}
+          {contact.github && (
+            <a href={contact.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="rounded-md p-2 text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+              <Github className="size-4" aria-hidden />
+            </a>
+          )}
           <Button asChild size="sm" className="hidden h-9 px-4 sm:inline-flex">
             <a href="#contato">Vamos conversar</a>
           </Button>

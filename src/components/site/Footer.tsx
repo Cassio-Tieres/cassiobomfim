@@ -1,4 +1,4 @@
-import { Linkedin } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 
 import { contact, navItems, profile } from "@/content/site";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
@@ -45,6 +45,7 @@ export function Footer() {
                   className="inline-flex items-center gap-2 text-sm text-ink-foreground/85 hover:text-signal"
                 >
                   {s.label === "LinkedIn" && <Linkedin className="size-4" aria-hidden />}
+                  {s.label === "GitHub" && <Github className="size-4" aria-hidden />}
                   {s.label}
                 </a>
               </li>
