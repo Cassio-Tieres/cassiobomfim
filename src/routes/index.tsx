@@ -8,6 +8,7 @@ import { Hero } from "@/components/site/Hero";
 import { Problems } from "@/components/site/Problems";
 import { Process } from "@/components/site/Process";
 import { Projects } from "@/components/site/Projects";
+import { PublishedSites } from "@/components/site/PublishedSites";
 import { Services } from "@/components/site/Services";
 import { Skills } from "@/components/site/Skills";
 
@@ -40,6 +41,7 @@ function Index() {
         <Hero />
         <Services />
         <Projects />
+        <PublishedSites />
         <Problems />
         <Process />
         <Skills />

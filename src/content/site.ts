@@ -28,6 +28,7 @@ export const navItems = [
   { label: "Início", href: "#inicio" },
   { label: "Serviços", href: "#servicos" },
   { label: "Projetos", href: "#projetos" },
+  { label: "Sites publicados", href: "#sites-publicados" },
   { label: "Como trabalho", href: "#como-trabalho" },
   { label: "Contato", href: "#contato" },
 ] as const;
@@ -226,6 +227,16 @@ export const projects: Project[] = [
       "Viabilizar a transferência estruturada de dados entre ambientes e reduzir os riscos associados a processos de migração.",
     technologies: [],
     flow: ["Origem", "Leitura", "Transformação", "Validação", "Destino"],
+  },
+];
+
+export const publishedSites = [
+  {
+    name: "Milena Modesto | Psicóloga",
+    description: "Site profissional para apresentação do trabalho, da abordagem e dos serviços de psicoterapia.",
+    url: "https://psimilenamodesto.netlify.app/",
+    desktopImage: "/psi.milena.pc.png",
+    mobileImage: "/psi.milena.mb.png",
   },
 ];
 
